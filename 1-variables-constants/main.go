@@ -5,6 +5,9 @@ package main
 
 import "fmt"
 
+// Variáveis Globais e Locais
+var global = "global"
+
 func main() {
 
 	// Declaração e Inicialização de Variáveis
@@ -88,4 +91,43 @@ func main() {
 	fmt.Println("var privada string - ", privada)
 	fmt.Println()
 
+	// Atribuição Múltipla
+
+	s, t, u := "texto", 1, 1.9
+	fmt.Println("Atribuição Múltipla")
+	fmt.Println(`s, t, u := "texto", 1, 1.9`)
+	fmt.Println("s =", s)
+	fmt.Println("t =", t)
+	fmt.Println("u =", u)
+	fmt.Println()
+
+	// Variáveis Globais e Locais
+
+	// Variáveis globais devem ser criadas fora da função main e podem ser acessadas por qualquer função
+	// Váriávies locais só existem dentro das funções
+
+	fmt.Println("Variáveis Globais e Locais")
+	fmt.Println("print variável global = ", global)
+	fmt.Printf("chamando a função printLocal() = ")
+	printLocal()
+	// fmt.Println(local) // não é printar a varíavel local de forma direta, pois ela só existe na função printLocal()
+	fmt.Println()
+
+	// Constantes
+	const texto string = "texto" // constante do tipo string
+	const numeroInt32 int = 1    // constante do tipo int32
+	const numero int = 2         // constante do tipo untyped, ou seja, pode ser usada para qualquer tipo de operação
+
+	fmt.Println("Constantes")
+	fmt.Println(`const texto string = "texto" // constante do tipo string`)
+	fmt.Println(`const numeroInt32 int = 1    // constante do tipo int32`)
+	fmt.Println(`const numero int = 2         // constante do tipo untyped, ou seja, pode ser usada para qualquer tipo de operação`)
+	fmt.Println()
+
+}
+
+// Variáveis Globais e Locais
+func printLocal() {
+	local := "local"
+	fmt.Println(local)
 }
